@@ -140,8 +140,23 @@
 </style>
 
 <script>
-  // INTERCEPT HERE
-  
+  /* 
+    Intercept all fetch requests - any request that has /cart/ in it - we reload the section 
+    - not best practice, as this is inefficient if you already know the functions that emit this event
+    - but this was created as a drag + drop solution. Seek pro help (or just ask me) if you want manual set up @ijbarratt
+    - Code inspired by ggorlen on: https://stackoverflow.com/questions/45425169/intercept-fetch-api-requests-and-responses-in-javascript
+  */
+  const {fetch: origFetch} = window;
+  window.fetch = async (...args) => {
+    const response = await origFetch(...args);
+
+    const requestUrl = args[0]
+    if (requestUrl.includes('/cart/')) {
+      updateGamifiedAnnouncementBar()
+    }
+
+    return response;
+  };
 
   /* 
     Wanted to use the section render API: https://shopify.dev/docs/api/ajax/section-rendering
@@ -212,7 +227,6 @@
         <p class="descrption-text">{{ next_reward_description }}</p>
       {% endif %}
     </div>
-    <button onclick="updateGamifiedAnnouncementBar()">Refresh</button>
     <div class="shipping-bar-section">
       <div class="shipping-bar-container" style="--bar-progress: {{ eligable_percent_complete | append: '%' }};">
         {% if is_eligable_for_final_reward == false and section.settings.is_position_indicator_visible == true %}
