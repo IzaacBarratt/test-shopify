@@ -1,4 +1,3 @@
-{% comment %} assign cart_value = cart.total_price | divided_by: 100 {% endcomment %}
 {%- liquid
   assign cart_value = cart.total_price | divided_by: 100
   assign max_reward_value = 0
@@ -206,9 +205,14 @@
     --border_color: {{ section.settings.border_color }};
     --section_padding: {{ section.settings.section_padding }}rem;
   "
-  {% if section.settings.is_border_visible %}
-    class="gamified-announcement-bar--border-bottom"
-  {% endif %}
+  class="
+    {% if section.settings.is_border_visible %}
+      gamified-announcement-bar--border-bottom
+    {% endif %}
+    {% if section.settings.is_sticky_header %}
+      gamified-announcement-bar--sticky-top
+    {% endif %}
+  "
 >
   <div class="gamified-announcement-bar wrapper">
     <div class="text-wrapper">
