@@ -2,6 +2,45 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "gamified_announcement_bar_Rtgkaq": {
+      "type": "gamified-announcement-bar",
+      "blocks": {
+        "cart_value_reward_UPP8Vt": {
+          "type": "cart_value_reward",
+          "settings": {
+            "reward_title": "Free Shipping",
+            "reward_description": "",
+            "reward_icon": "🚀",
+            "reward_condition": 3000
+          }
+        },
+        "cart_value_reward_iAkTcV": {
+          "type": "cart_value_reward",
+          "settings": {
+            "reward_title": "10% Discount",
+            "reward_description": "",
+            "reward_icon": "🎁",
+            "reward_condition": 5000
+          }
+        }
+      },
+      "block_order": [
+        "cart_value_reward_UPP8Vt",
+        "cart_value_reward_iAkTcV"
+      ],
+      "settings": {
+        "bg_color": "",
+        "text_color": "",
+        "bar_color": "#0096C7",
+        "highlight_color": "#E7ADAD",
+        "is_border_visible": false,
+        "border_color": "",
+        "section_padding": 1,
+        "bar_thickness": 4,
+        "is_position_indicator_visible": true,
+        "position_indicator_size": 15
+      }
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -47,6 +86,7 @@
     }
   },
   "order": [
+    "gamified_announcement_bar_Rtgkaq",
     "announcement-bar",
     "header"
   ]
