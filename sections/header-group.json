@@ -2,39 +2,39 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "gamified_announcement_bar_Rtgkaq": {
+    "gamified_announcement_bar_HKiW3d": {
       "type": "gamified-announcement-bar",
       "blocks": {
-        "cart_value_reward_UPP8Vt": {
+        "cart_value_reward_yTcYLg": {
           "type": "cart_value_reward",
           "settings": {
             "reward_title": "Free Shipping",
-            "reward_description": "",
-            "reward_icon": "🚀",
+            "reward_description": "On all EU regions",
+            "reward_icon": "🛍️",
             "reward_condition": 3000
           }
         },
-        "cart_value_reward_iAkTcV": {
+        "cart_value_reward_rfL9PM": {
           "type": "cart_value_reward",
           "settings": {
             "reward_title": "10% Discount",
-            "reward_description": "",
-            "reward_icon": "🎁",
-            "reward_condition": 5000
+            "reward_description": "On items in the EU",
+            "reward_icon": "💵",
+            "reward_condition": 10000
           }
         }
       },
       "block_order": [
-        "cart_value_reward_UPP8Vt",
-        "cart_value_reward_iAkTcV"
+        "cart_value_reward_yTcYLg",
+        "cart_value_reward_rfL9PM"
       ],
       "settings": {
         "bg_color": "",
-        "text_color": "",
-        "bar_color": "#0096C7",
-        "highlight_color": "#E7ADAD",
+        "text_color": "{{ shop.brand.colors.primary[0].background }}",
+        "bar_color": "#4598b4",
+        "highlight_color": "#e7adad",
         "is_border_visible": false,
-        "border_color": "",
+        "border_color": "#c4c4c4",
         "section_padding": 1,
         "bar_thickness": 4,
         "is_position_indicator_visible": true,
@@ -86,7 +86,7 @@
     }
   },
   "order": [
-    "gamified_announcement_bar_Rtgkaq",
+    "gamified_announcement_bar_HKiW3d",
     "announcement-bar",
     "header"
   ]
