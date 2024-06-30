@@ -1,0 +1,163 @@
+<style>
+  .bs-devshop__instagram-carousel {
+    width: 100%;
+    overflow: scroll;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .bs-devshop__link-builder-link-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    background-color: white;
+  }
+
+  .bs-devshop__link-builder-link-container a {
+    text-decoration: none;
+}
+
+  .bs-devshop__link-builder-link-item {
+    padding: 1.375rem;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.bs-devshop__link-builder-link-item p {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.bs-devshop__link-builder-link-item .tag {
+    font-size: 0.563;
+    margin-left: 1rem;
+    text-transform: uppercase;
+    padding: 0.125rem 0.375rem;
+}
+
+</style>
+
+<div
+  class="
+    bs-devshop__link-builder wrapper
+    {% if section.settings.hide_border %} bs-devshop__instagram-carousel--hide-border {% endif %}
+    {% if section.settings.hide_scrollbar %} bs-devshop__instagram-carousel--hide-scrollbar {% endif %}
+  "
+  style="
+    --carousel-gap: {{ section.settings.carousel_gap }}rem;
+    --border-width: {{ section.settings.border_thickness }}px;
+    --carousel-height: {{ section.settings.carousel_height }}rem;
+    --border-color: {{ section.settings.border_color }};
+    --background-color: {{ section.settings.bg_color }};
+    --padding-desktop: {{ section.settings.padding_desktop }}rem;
+    --padding-mobile: {{ section.settings.padding_mobile }}rem;
+  "
+>
+  <div class="bs-devshop__link-builer">
+    <div class="bs-devshop__link-builder-link-container">
+      {% for block in section.blocks %}
+        <a href="{{ block.settings.url }}">
+          <div class="bs-devshop__link-builder-link-item {% if block.settings.is_highlight %}link-item--highlight{% endif %}">
+            <p>{{ block.settings.title }}</p>
+            {% if block.settings.tag != blank %}
+              <span class="tag">{{ block.settings.tag }}</span>
+            {% endif %}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Link Builder",
+  "tag": "section",
+  "blocks": [
+    {
+      "name": "link",
+      "type": "link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "page_url",
+          "label": "Page URL"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_highlight",
+          "label": "Is highlighted",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Tag"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "label": "Logo",
+      "type": "image_picker",
+      "id": "logo_image"
+    },
+    {
+      "label": "Title",
+      "id": "title",
+      "type": "text",
+      "default": "Only the Best for Your Pets"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>Pet supplements that are <b>actually</b> healthy </p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Link Builder",
+      "blocks": [
+        {
+          "type": "link",
+          "settings": {
+            "title": "🎉ProductXYZ",
+            "tag": "NEW"
+          }
+        },
+        {
+          "type": "link",
+          "settings": {
+            "title": "📦Build Your Bundle & Save"
+          }
+        },
+        {
+          "type": "link",
+          "settings": {
+            "title": "🐶Joint Pain Chews",
+            "tag": "Best seller",
+            "is_highlight": true
+          }
+        },
+        {
+          "type": "link",
+          "settings": {
+            "title": "🇸🇬National Day Sale"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
