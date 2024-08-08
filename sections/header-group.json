@@ -1,7 +1,31 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "toggle_banner_ek4zik": {
+      "type": "toggle-banner",
+      "settings": {
+        "is_debug": true,
+        "banner_cta": "shopify:\/\/products\/3d-star-top-1",
+        "desktop_copy": "<p>Free Shipping For Orders Over $50<\/p>",
+        "mobile_copy": "<p>Free Shipping For<\/p><p>Orders Over $50<\/p>",
+        "is_only_homepage": false,
+        "url_partial": "",
+        "background_color": "linear-gradient(90deg, rgba(144, 178, 195, 1), rgba(9, 43, 121, 1) 20%, rgba(0, 212, 255, 1) 100%)",
+        "font_color": "#ffffff",
+        "alignment": "center",
+        "text_alignment": "center"
+      }
+    },
     "gamified_announcement_bar_HKiW3d": {
       "type": "gamified-announcement-bar",
       "blocks": {
@@ -28,6 +52,7 @@
         "cart_value_reward_yTcYLg",
         "cart_value_reward_rfL9PM"
       ],
+      "disabled": true,
       "settings": {
         "bg_color": "",
         "text_color": "{{ shop.brand.colors.primary[0].background }}",
@@ -86,6 +111,7 @@
     }
   },
   "order": [
+    "toggle_banner_ek4zik",
     "gamified_announcement_bar_HKiW3d",
     "announcement-bar",
     "header"
