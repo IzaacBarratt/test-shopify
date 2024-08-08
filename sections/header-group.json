@@ -11,16 +11,16 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "toggle_banner_ek4zik": {
+    "toggle_banner_FpeJbC": {
       "type": "toggle-banner",
       "settings": {
         "is_debug": true,
-        "banner_cta": "shopify:\/\/products\/3d-star-top-1",
-        "desktop_copy": "<p>Free Shipping For Orders Over $50<\/p>",
-        "mobile_copy": "<p>Free Shipping For<\/p><p>Orders Over $50<\/p>",
-        "is_only_homepage": false,
+        "banner_cta": "",
+        "desktop_copy": "<p>Text<\/p>",
+        "mobile_copy": "<p>More text<\/p>",
+        "is_only_homepage": true,
         "url_partial": "",
-        "background_color": "linear-gradient(90deg, rgba(144, 178, 195, 1), rgba(9, 43, 121, 1) 20%, rgba(0, 212, 255, 1) 100%)",
+        "background_color": "linear-gradient(90deg, rgba(199, 70, 129, 1), rgba(88, 53, 139, 1) 100%)",
         "font_color": "#ffffff",
         "alignment": "center",
         "text_alignment": "center"
@@ -111,7 +111,7 @@
     }
   },
   "order": [
-    "toggle_banner_ek4zik",
+    "toggle_banner_FpeJbC",
     "gamified_announcement_bar_HKiW3d",
     "announcement-bar",
     "header"
