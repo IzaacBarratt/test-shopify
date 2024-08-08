@@ -25,6 +25,7 @@
       "block_order": [
         "countdown_timer_4JRbVG"
       ],
+      "disabled": true,
       "settings": {
         "is_debug": true,
         "banner_cta": "",
