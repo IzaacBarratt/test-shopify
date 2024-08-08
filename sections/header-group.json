@@ -29,7 +29,7 @@
         "is_debug": true,
         "banner_cta": "",
         "desktop_copy": "<p>Free Shipping On Orders Over $50<\/p>",
-        "mobile_copy": "<p>Free Shipping On <\/p><p>Orders Over $50<\/p>",
+        "mobile_copy": "<p>Free Shipping Before<\/p>",
         "is_only_homepage": true,
         "url_partial": "",
         "background_color": "linear-gradient(90deg, rgba(199, 70, 129, 1), rgba(88, 53, 139, 1) 100%)",
