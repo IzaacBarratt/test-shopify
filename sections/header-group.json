@@ -2,6 +2,33 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "toggle_banner_M4CU6m": {
+      "type": "toggle-banner",
+      "blocks": {
+        "countdown_timer_L87VUM": {
+          "type": "countdown_timer",
+          "settings": {
+            "expiry_date": "2024-07-10",
+            "expiry_time": "11:00"
+          }
+        }
+      },
+      "block_order": [
+        "countdown_timer_L87VUM"
+      ],
+      "settings": {
+        "is_debug": true,
+        "banner_cta": "",
+        "desktop_copy": "<p>Get 70% OFF for the next 20 minutes<\/p>",
+        "mobile_copy": "<p>Get 70% OFF<\/p>",
+        "is_only_homepage": false,
+        "url_partial": "\/products\/",
+        "background_color": "linear-gradient(86deg, rgba(233, 158, 158, 1), rgba(245, 222, 138, 1) 100%)",
+        "font_color": "#ffffff",
+        "alignment": "center",
+        "text_alignment": "center"
+      }
+    },
     "gamified_announcement_bar_HKiW3d": {
       "type": "gamified-announcement-bar",
       "blocks": {
@@ -28,6 +55,7 @@
         "cart_value_reward_yTcYLg",
         "cart_value_reward_rfL9PM"
       ],
+      "disabled": true,
       "settings": {
         "bg_color": "",
         "text_color": "{{ shop.brand.colors.primary[0].background }}",
@@ -86,6 +114,7 @@
     }
   },
   "order": [
+    "toggle_banner_M4CU6m",
     "gamified_announcement_bar_HKiW3d",
     "announcement-bar",
     "header"

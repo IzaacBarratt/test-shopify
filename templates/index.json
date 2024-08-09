@@ -174,11 +174,75 @@
         "padding_top": 56,
         "padding_bottom": 68
       }
+    },
+    "link_builder_XqYhpH": {
+      "type": "link-builder",
+      "blocks": {
+        "link_GryJX4": {
+          "type": "link",
+          "settings": {
+            "title": "🎉ProductXYZ",
+            "page_url": "",
+            "is_highlight": false,
+            "tag": "NEW"
+          }
+        },
+        "link_rGNRnt": {
+          "type": "link",
+          "settings": {
+            "title": "📦Build Your Bundle & Save",
+            "page_url": "",
+            "is_highlight": false,
+            "tag": ""
+          }
+        },
+        "link_KYcKpW": {
+          "type": "link",
+          "settings": {
+            "title": "🐶Joint Pain Chews",
+            "page_url": "",
+            "is_highlight": true,
+            "tag": "Best seller"
+          }
+        },
+        "link_WnypBi": {
+          "type": "link",
+          "settings": {
+            "title": "🇸🇬National Day Sale",
+            "page_url": "",
+            "is_highlight": false,
+            "tag": ""
+          }
+        },
+        "link_pbfYk8": {
+          "type": "link",
+          "settings": {
+            "title": "More stuff here",
+            "page_url": "",
+            "is_highlight": false,
+            "tag": "20% off"
+          }
+        }
+      },
+      "block_order": [
+        "link_GryJX4",
+        "link_rGNRnt",
+        "link_KYcKpW",
+        "link_WnypBi",
+        "link_pbfYk8"
+      ],
+      "settings": {
+        "title": "Only the Best for Your Pets",
+        "subtitle": "<p>Pet supplements that are <strong>actually<\/strong> healthy <\/p>",
+        "vertical_padding": 5,
+        "highlight_color": "linear-gradient(81.07deg, rgba(0, 128, 128, 1), rgba(56, 145, 145, 1) 25%, rgba(56, 115, 158, 1) 50%, rgba(125, 79, 223, 1) 75%, rgba(211, 79, 223, 1) 100%)"
+      }
     }
   },
   "order": [
     "section_instagram_carousel_QaVzeL",
     "image-with-text",
-    "featured-collection"
+    "featured-collection",
+    "link_builder_XqYhpH"
   ]
 }

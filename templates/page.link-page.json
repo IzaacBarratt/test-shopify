@@ -2,37 +2,86 @@
   "sections": {
     "link-builder": {
       "type": "link-builder",
-      "settings": {
-      },
-      "blocks": [
-        {
-            "type": "link",
-            "settings": {
-              "title": "🎉ProductXYZ",
-              "tag": "NEW"
-            }
-          },
-          {
-            "type": "link",
-            "settings": {
-              "title": "📦Build Your Bundle & Save"
-            }
-          },
-          {
-            "type": "link",
-            "settings": {
-              "title": "🐶Joint Pain Chews",
-              "tag": "Best seller",
-              "is_highlight": true
-            }
-          },
-          {
-            "type": "link",
-            "settings": {
-              "title": "🇸🇬National Day Sale"
-            }
+      "blocks": {
+        "link_pgEqzj": {
+          "type": "link",
+          "settings": {
+            "title": "🎉Product XYZ",
+            "page_url": "https:\/\/google.com",
+            "is_highlight": false,
+            "tag": "new"
           }
-      ]
+        },
+        "link_9ddPd3": {
+          "type": "link",
+          "settings": {
+            "title": "📦Build Your Bundle & Save",
+            "page_url": "shopify:\/\/products\/3d-star-top",
+            "is_highlight": false,
+            "tag": ""
+          }
+        },
+        "link_MRbjXA": {
+          "type": "link",
+          "settings": {
+            "title": "🐶Joint Pain Chews",
+            "page_url": "shopify:\/\/pages\/contact",
+            "is_highlight": true,
+            "tag": "best seller"
+          }
+        },
+        "link_hEXfxr": {
+          "type": "link",
+          "settings": {
+            "title": "🇸🇬National Day Saled",
+            "page_url": "",
+            "is_highlight": false,
+            "tag": "20% off"
+          }
+        },
+        "link_GRqPMM": {
+          "type": "link",
+          "settings": {
+            "title": "💵Affiliate Program",
+            "page_url": "",
+            "is_highlight": false,
+            "tag": ""
+          }
+        },
+        "link_gyBdkz": {
+          "type": "link",
+          "settings": {
+            "title": "⭐️See Testimonials",
+            "page_url": "",
+            "is_highlight": false,
+            "tag": ""
+          }
+        },
+        "link_ixLeFN": {
+          "type": "link",
+          "settings": {
+            "title": "📧Get In Touch With Us",
+            "page_url": "",
+            "is_highlight": false,
+            "tag": ""
+          }
+        }
+      },
+      "block_order": [
+        "link_pgEqzj",
+        "link_9ddPd3",
+        "link_MRbjXA",
+        "link_hEXfxr",
+        "link_GRqPMM",
+        "link_gyBdkz",
+        "link_ixLeFN"
+      ],
+      "settings": {
+        "title": "Only the Best for Your Petsd",
+        "subtitle": "<p>Pet supplements that are <strong>actually<\/strong> healthy <\/p>",
+        "vertical_padding": 8,
+        "highlight_color": "linear-gradient(89deg, rgba(219, 149, 250, 1) 7%, rgba(237, 154, 250, 1) 35.612%, rgba(148, 88, 255, 1) 94%)"
+      }
     }
   },
   "order": [

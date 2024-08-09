@@ -1,0 +1,343 @@
+<style>
+  .bs-devshop__toggle-banner {
+    color: var(--color);
+    background: var(--background-color);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .bs-devshop__toggle-banner__container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: var(--alignment);
+  }
+
+  .bs-devshop__toggle-banner__title {
+    color: var(--color);
+    margin: 0;
+    text-align: var(--text-alignment);
+  }
+
+  .bs-devshop__toggle-banner__title > * {
+    margin: 0;
+  }
+
+  .title--desktop {
+    display: none;
+  }
+
+  .countdown-timer {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .countdown-timer .countdown-number {
+    background-color: white;
+    color: black;
+    padding: 0.3rem 0.5rem 1.5rem;
+    border-radius: 0.2rem;
+    font-weight: bold;
+    position: relative;
+    line-height: 1.5rem;
+  }
+
+  .countdown-number::before {
+    position: absolute;
+    bottom: -0rem;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .countdown-number[data-countdown-days]::before {
+    content: 'DAY';
+  }
+  .countdown-number[data-countdown-hours]::before {
+    content: 'HRS';
+  }
+  .countdown-number[data-countdown-minutes]::before {
+    content: 'MIN';
+  }
+  .countdown-number[data-countdown-seconds]::before {
+    content: 'SEC';
+  }
+
+  .remove-link-styles a:link { 
+    text-decoration: none; 
+  } 
+  .remove-link-styles a:visited { 
+    text-decoration: none; 
+  } 
+  .remove-link-styles a:hover { 
+    text-decoration: none; 
+  } 
+  .remove-link-styles a:active { 
+    text-decoration: none; 
+  }
+
+  @media screen and (min-width: 750px) {
+    .title--desktop {
+      display: inline;
+    }
+    .title--mobile {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // All elements start hidden
+  function hideToggleElements() {
+    const toggleElements = document.querySelectorAll('[data-toggle-visibility]');
+    const pageUrl = document.location.href;
+
+    for (let i = 0; i < toggleElements.length; i++) {
+      const el = toggleElements[i];
+
+      console.log(el.dataset)
+
+      if (el.dataset.homepageOnly) {
+        const isMatch = document.location.pathname == '/';
+        if (isMatch) {
+          el.classList.remove('hidden');
+        }
+        continue;
+      }
+
+      if (el.dataset.partialUrl) {
+        const isMatch = pageUrl.includes(el.dataset.partialUrl);
+        if (isMatch) {
+          el.classList.remove('hidden');
+        }
+        continue;
+      }
+    }
+  }
+
+  function activateCountdownTimers() {
+    const countdownElements = document.querySelectorAll('[data-countdown-timer]');
+
+    countdownElements.forEach((n) => {
+      let { expiryDate: expDate, expiryTime: expTime } = n.dataset;
+      let endDate = new Date(`${expDate}:${expTime}`);
+
+      startTimer(endDate, n);
+    });
+
+    const makeNumberDoubleDigitString = (num) => (num < 10 ? '0' + num : num);
+
+    function startTimer(expiryDate, countdownElement) {
+      var days, hours, minutes, seconds;
+      {% comment %} let dayEl = countdownElement.querySelector('[data-countdown-days]'); {% endcomment %}
+      let hourEl = countdownElement.querySelector('[data-countdown-hours]');
+      let minuteEl = countdownElement.querySelector('[data-countdown-minutes]');
+      let secondEl = countdownElement.querySelector('[data-countdown-seconds]');
+
+      let x = setInterval(function () {
+        let diffMilliseconds = expiryDate.getTime() - new Date().getTime();
+
+        {% comment %} days = Math.floor(diffMilliseconds / (1000 * 60 * 60 * 24)); {% endcomment %}
+        hours = Math.floor(diffMilliseconds / (1000 * 60 * 60))
+        minutes = Math.floor((diffMilliseconds % (1000 * 60 * 60)) / (1000 * 60));
+        seconds = Math.floor((diffMilliseconds % (1000 * 60)) / 1000);
+
+        days = makeNumberDoubleDigitString(days);
+        hours = makeNumberDoubleDigitString(hours);
+        minutes = makeNumberDoubleDigitString(minutes);
+        seconds = makeNumberDoubleDigitString(seconds);
+
+        // If time has expired, set to 0 and clear countdown
+        if (diffMilliseconds < 0) {
+          days = '00';
+          hours = '00';
+          minutes = '00';
+          seconds = '00';
+          clearInterval(x);
+        }
+
+        {% comment %} dayEl.textContent = days; {% endcomment %}
+        hourEl.textContent = hours;
+        minuteEl.textContent = minutes;
+        secondEl.textContent = seconds;
+      }, 1000);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    hideToggleElements();
+    activateCountdownTimers();
+  });
+</script>
+
+{% comment %}
+  This .hidden toggles based on function -> hideToggleElements() in custom.js
+{% endcomment %}
+<div
+  class="bs-devshop__toggle-banner remove-link-styles {% unless request.design_mode and section.settings.is_debug %} hidden {% endunless %}"
+  style="
+    --background-color: {{ section.settings.background_color }};
+    --color: {{ section.settings.font_color }};
+    --alignment: {{ section.settings.alignment }};
+    --text-alignment: {{ section.settings.text_alignment }};
+  "
+  data-toggle-visibility
+  {% if section.settings.url_partial %}
+    data-partial-url="{{ section.settings.url_partial }}"
+  {% endif %}
+  {% if section.settings.is_only_homepage %}
+    data-homepage-only="true"
+  {% endif %}
+>
+  <a href="{{ section.settings.banner_cta }}">
+    <div class="bs-devshop__toggle-banner__container page-width">
+      <h4 class="bs-devshop__toggle-banner__title title--desktop ">{{ section.settings.desktop_copy }}</h4>
+      <h4 class="bs-devshop__toggle-banner__title title--mobile">{{ section.settings.mobile_copy }}</h4>
+
+      {% for block in section.blocks %}
+        {% if block.type == 'countdown_timer' %}
+          <div
+            class="countdown-timer"
+            data-countdown-timer
+            data-expiry-date="{{ block.settings.expiry_date }}"
+            data-expiry-time="{{ block.settings.expiry_time }}"
+          >
+            {% comment %} <div data-countdown-days class="countdown-number">00</div> {% endcomment %}
+            <div data-countdown-hours class="countdown-number">00</div>
+            <div data-countdown-minutes class="countdown-number">00</div>
+            <div data-countdown-seconds class="countdown-number">00</div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </a>
+</div>
+
+{% schema %}
+{
+  "name": "Toggle Banner",
+  "enabled_on": { "groups": ["header"] },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "is_debug",
+      "default": true,
+      "label": "Debug Mode",
+      "info": "Debug mode displays the banner while on editor - even if the current settings would hide it. This lets you design safely and hide when you're done"
+    },
+    {
+      "type": "url",
+      "id": "banner_cta",
+      "label": "Banner CTA"
+    },
+    {
+      "type": "richtext",
+      "default": "<p>Text</p>",
+      "id": "desktop_copy",
+      "label": "Desktop copy"
+    },
+    {
+      "type": "richtext",
+      "default": "<p>More text</p>",
+      "id": "mobile_copy",
+      "label": "Mobile copy"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_only_homepage",
+      "default": false,
+      "label": "Homepage Only",
+      "info": "Should this only be shown on homepage? Overwrites URL partial"
+    },
+    {
+      "type": "text",
+      "label": "URL Partial",
+      "info": "Display if URL contains the text. For example - 'website.com/pages?utm=1234', 'utm=1234' would match, but so would 'website.com/pages'",
+      "id": "url_partial"
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "Banner Background"
+    },
+    {
+      "type": "color",
+      "id": "font_color",
+      "label": "Text Color"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Alignment",
+      "default": "flex-start",
+      "options": [
+        {
+          "label": "Left",
+          "value": "flex-start"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Right",
+          "value": "flex-end"
+        }
+      ]
+    },
+    {
+        "type": "select",
+        "id": "text_alignment",
+        "label": "Text Alignment",
+        "default": "left",
+        "options": [
+          {
+            "label": "Left",
+            "value": "left"
+          },
+          {
+            "label": "Center",
+            "value": "center"
+          },
+          {
+            "label": "Right",
+            "value": "right"
+          }
+        ]
+      }
+  ],
+  "blocks": [
+    {
+      "type": "countdown_timer",
+      "limit": 1,
+      "name": "Countdown Timer",
+      "settings": [
+        {
+          "type": "text",
+          "id": "expiry_date",
+          "label": "Expiry Date",
+          "placeholder": "YYYY-MM-DD",
+          "info": "Use ISO format: 2024-07-25 (year, month, day)"
+        },
+        {
+          "type": "text",
+          "id": "expiry_time",
+          "placeholder": "20:45",
+          "label": "Expiry Time",
+          "info": "24 clock system. 8:45pm = 20:45"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Toggle Banner",
+      "settings": {
+        "background_color": "linear-gradient(90deg, rgba(144,178,195,1) 0%, rgba(9,43,121,1) 20%, rgba(0,212,255,1) 100%)",
+        }
+    }
+  ]
+}
+{% endschema %}
