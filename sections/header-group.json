@@ -1,29 +1,38 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "toggle_banner_M4CU6m": {
+    "toggle_banner_FpeJbC": {
       "type": "toggle-banner",
       "blocks": {
-        "countdown_timer_L87VUM": {
+        "countdown_timer_4JRbVG": {
           "type": "countdown_timer",
           "settings": {
-            "expiry_date": "2024-07-10",
-            "expiry_time": "11:00"
+            "expiry_date": "2024-08-09",
+            "expiry_time": "20:45"
           }
         }
       },
       "block_order": [
-        "countdown_timer_L87VUM"
+        "countdown_timer_4JRbVG"
       ],
       "settings": {
         "is_debug": true,
         "banner_cta": "",
-        "desktop_copy": "<p>Get 70% OFF for the next 20 minutes<\/p>",
-        "mobile_copy": "<p>Get 70% OFF<\/p>",
-        "is_only_homepage": false,
-        "url_partial": "\/products\/",
-        "background_color": "linear-gradient(86deg, rgba(233, 158, 158, 1), rgba(245, 222, 138, 1) 100%)",
+        "desktop_copy": "<p>Free Shipping On Orders Over $50<\/p>",
+        "mobile_copy": "<p>Free Shipping Before<\/p>",
+        "is_only_homepage": true,
+        "url_partial": "",
+        "background_color": "linear-gradient(90deg, rgba(199, 70, 129, 1), rgba(88, 53, 139, 1) 100%)",
         "font_color": "#ffffff",
         "alignment": "center",
         "text_alignment": "center"
@@ -114,7 +123,7 @@
     }
   },
   "order": [
-    "toggle_banner_M4CU6m",
+    "toggle_banner_FpeJbC",
     "gamified_announcement_bar_HKiW3d",
     "announcement-bar",
     "header"

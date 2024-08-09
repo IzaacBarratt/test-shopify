@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "section_instagram_carousel_QaVzeL": {
@@ -103,8 +112,8 @@
         "padding_mobile": 1.5,
         "hide_scrollbar": true,
         "bg_color": "",
-        "border_color": "#717171",
-        "hide_border": true,
+        "border_color": "#c74681",
+        "hide_border": false,
         "border_thickness": 2.5
       }
     },
