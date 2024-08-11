@@ -1,16 +1,55 @@
-/*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
 {
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "cart_items_rewards_bar_XthXdP": {
+      "type": "cart-items-rewards-bar",
+      "blocks": {
+        "cart_item_reward_JFqt43": {
+          "type": "cart_item_reward",
+          "settings": {
+            "reward_title": "10% OFF + FREE",
+            "reward_items": 3,
+            "reward_grouped_items": 3,
+            "reward_icon": "🚀"
+          }
+        },
+        "cart_item_reward_c3rryb": {
+          "type": "cart_item_reward",
+          "settings": {
+            "reward_title": "15% OFF",
+            "reward_items": 1,
+            "reward_grouped_items": 1,
+            "reward_icon": "🎁"
+          }
+        },
+        "cart_item_reward_cqHp9c": {
+          "type": "cart_item_reward",
+          "settings": {
+            "reward_title": "20% OFF",
+            "reward_items": 1,
+            "reward_grouped_items": 1,
+            "reward_icon": "💵"
+          }
+        }
+      },
+      "block_order": [
+        "cart_item_reward_JFqt43",
+        "cart_item_reward_c3rryb",
+        "cart_item_reward_cqHp9c"
+      ],
+      "settings": {
+        "foreground_color": "#ffffff",
+        "background_color": "#1d1d1d",
+        "border_radius": 2.5,
+        "padding": 0.5,
+        "desktop_font_size": 1,
+        "mobile_font_size": 1,
+        "timer_text": "Offer ends in:",
+        "timer": 30,
+        "margin_top": 1
+      }
+    },
     "toggle_banner_FpeJbC": {
       "type": "toggle-banner",
       "blocks": {
@@ -25,6 +64,7 @@
       "block_order": [
         "countdown_timer_4JRbVG"
       ],
+      "disabled": true,
       "settings": {
         "is_debug": true,
         "banner_cta": "",
@@ -123,6 +163,7 @@
     }
   },
   "order": [
+    "cart_items_rewards_bar_XthXdP",
     "toggle_banner_FpeJbC",
     "gamified_announcement_bar_HKiW3d",
     "announcement-bar",

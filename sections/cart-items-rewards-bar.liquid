@@ -5,34 +5,55 @@
     border-radius: var(--border-radius);
     padding: var(--padding);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    margin-top: var(--margin-top);
+    gap: 1rem;
   }
 
   .bs-devshop__rewards__itemcount {
-    display: none;
+    display: none !important;
   }
 
   .bs-devshop__rewards__wrapper {
     display: flex;
-    justify-content: space-between;
-    width: 80%;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
   }
 
   .bs-devshop__rewards__timer {
-    width: 15%;
+    /* width: 15%; */
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 1rem;
+    white-space: nowrap;
+    font-size: var(--desktop-font-size);
   }
 
   .bs-devshop__rewards_timermin {
     display: inline-block;
     width: 7rem;
     height: 3rem;
+    margin-bottom:0;
+  }
+
+  .bs-devshop__rewards_timermin--outline {
+    border: 1px solid var(--foreground-color);
+    border-radius: 2rem;
+    display: flex;
+    
+    padding: 0.5rem 1rem;
   }
 
   .bs-devshop__reward__item {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    text-align: center;
+    max-width: 20rem;
+    white-space: nowrap;
+
   }
 
   .bs-devshop__reward__title {
@@ -40,6 +61,10 @@
     display: flex;
     justify-content: center;
     text-transform: uppercase;
+    font-size: var(--desktop-font-size);
+    margin-bottom: 0;
+    align-items: center;
+    margin-bottom: -5px;
   }
 
   .bs-devshop__reward__cartitems {
@@ -49,7 +74,8 @@
 
   .bs-devshop__reward__cartitembar {
     position: relative;
-    width: 30%;
+    /* width: 30%; */
+    width: 100%;
     height: 0.5rem;
     opacity: .5;
     background-color: var(--foreground-color);
@@ -59,16 +85,22 @@
 
   @media screen and (max-width: 749px) {
     .bs-devshop__rewards__bar {
-      padding: 2rem;
+      /* padding: 2rem; */
       border-radius: 2rem;
+      
     }
 
     .bs-devshop__rewards__wrapper {
       width: 90%;
     } 
 
+    .bs-devshop__reward__title {
+      font-size: var(--mobile-font-size);
+    }
+
     .bs-devshop__rewards__timer {
-      width: 5%;
+      /* width: 5%; */
+      font-size: var(--mobile-font-size);
     }
 
     .bs-devshop__rewards__timertext {
@@ -80,9 +112,13 @@
 <section class="page-width" style="--background-color: {{ section.settings.background_color }};
     --foreground-color: {{ section.settings.foreground_color }}; --border-radius: {{ section.settings.border_radius }}rem;
     --padding: {{ section.settings.padding }}rem;
+    --margin-top: {{ section.settings.margin_top }}rem;
+    --mobile-font-size: {{ section.settings.mobile_font_size }}rem;
+    --desktop-font-size: {{ section.settings.desktop_font_size }}rem;
     ">
   <div class="bs-devshop__rewards__itemcount">{{ cart.item_count }}</div>
   <div class="bs-devshop__rewards__bar">
+    <div>&nbsp;</div>
     <div class="bs-devshop__rewards__wrapper">
       {% assign rewards_ordered_by_items = section.blocks | sort: 'settings.reward_items' %}
       {% for reward in rewards_ordered_by_items %}
@@ -98,7 +134,7 @@
     </div>
     <div class="bs-devshop__rewards__timer">
       <span class="bs-devshop__rewards__timertext">{{ section.settings.timer_text }}</span>
-      <span class="bs-devshop__rewards__timermin">{{ section.settings.timer }}</span>
+      <span class="bs-devshop__rewards__timermin {% if section.settings.is_timer_outline %}bs-devshop__rewards_timermin--outline{% endif %}">{{ section.settings.timer }}</span>
     </div>
   </div>
 </section>
@@ -116,7 +152,6 @@
     
     function updateRewardsBar() {
       const cartItemCount = +document.querySelector('.bs-devshop__rewards__itemcount').innerHTML;
-      console.log(cartItemCount);
       const bars = document.querySelectorAll('.bs-devshop__reward__cartitembar');
       
       for(let i = 0; i < bars.length; i++) {
@@ -129,18 +164,36 @@
     }
   
     let totalSeconds =  +document.querySelector('.bs-devshop__rewards__timermin').innerHTML * 60; 
+
+    function numberToString(number) {
+      let string = number;
+      return string.length < 2
+        ? '0' + number
+        : number;
+    }
+
+    function formatTime(timeNumber) {
+      let minutes = Math.floor(totalSeconds / 60)
+      let seconds = Math.round(totalSeconds % 60)
+
+      return `${numberToString(minutes)}:${numberToString(seconds)}`;
+    }
+
+    let runTimer;
     
     function run() {
       totalSeconds -= 1;
       if(totalSeconds < 0) {
         document.querySelector('.bs-devshop__rewards__bar').style.display = 'none';
+        clearInterval(runTimer)
         return;
       }
-      totalSecondsOutput = totalSeconds / 100;
-      document.querySelector('.bs-devshop__rewards__timermin').innerHTML = totalSecondsOutput;
+
+      totalSecondsOutput = totalSeconds / 60;
+      document.querySelector('.bs-devshop__rewards__timermin').innerHTML = formatTime(totalSecondsOutput);
     }
   
-    setInterval(run, 1000);
+    runTimer = setInterval(run, 1000);
   
     updateRewardsBar();
   
@@ -165,14 +218,20 @@
     "name": "Cart Items Rewards Bar",
     "settings": [
       {
+        "type": "header",
+        "content": "Design"
+      },
+      {
         "type": "color",
         "id": "foreground_color",
-        "label": "Foreground Color"
+        "label": "Foreground Color",
+        "default": "#FFFFFF"
       },
       {
         "type": "color",
         "id": "background_color",
-        "label": "Background Color"
+        "label": "Background Color",
+        "default": "#000000"
       },
       {
         "type": "range",
@@ -182,7 +241,7 @@
         "step": 0.5,
         "unit": "rem",
         "label": "Border Radius",
-        "default": 5
+        "default": 2.5
       },
       {
         "type": "range",
@@ -192,15 +251,40 @@
         "step": 0.5,
         "unit": "rem",
         "label": "Padding",
-        "default": 3
-      }, {
+        "default": 1.5
+      },
+      {
+        "type": "range",
+        "id": "desktop_font_size",
+        "min": 0.5,
+        "max": 1.5,
+        "step": 0.1,
+        "unit": "rem",
+        "label": "Desktop Font Size",
+        "default": 1.2
+      },
+      {
+        "type": "range",
+        "id": "mobile_font_size",
+        "min": 0.5,
+        "max": 1.5,
+        "step": 0.1,
+        "unit": "rem",
+        "label": "Mobile Font Size",
+        "default": 1
+      },
+      {
+        "type": "header",
+        "content": "Timer"
+      },
+        {     
         "type": "paragraph",
-        "content": "Enter a timer in minutes, allowed for a customer to continue adding to cart, inorder for the rewards to apply."
+        "content": "This timer is just aesthetic, it has no effects on cart or removing items."
       }, {
         "type": "text",
         "id": "timer_text",
         "label": "Timer Text",
-        "default": "Offer ends in"
+        "default": "Offer ends in:"
       }, {
         "type": "range",
         "id": "timer",
@@ -210,7 +294,23 @@
         "unit": "min",
         "label": "Timer",
         "default": 1
-      }
+      },
+      {
+        "type": "range",
+        "id": "margin_top",
+        "min": 1,
+        "max": 20,
+        "step": 1,
+        "unit": "rem",
+        "label": "rem",
+        "default": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "is_timer_outline",
+        "label": "Timer outline",
+        "default": true
+      },
     ],
     "max_blocks": 3,
     "blocks": [
@@ -221,15 +321,18 @@
           {
             "type": "text",
             "id": "reward_title",
-            "label": "Reward Title"
+            "label": "Reward Title",
+            "default": "Free Shipping"
           }, {
             "type": "number",
             "id": "reward_items",
-            "label": "Cart items to Reward"
+            "label": "Cart items to Reward",
+            "default": 1
           }, {
             "type": "number",
             "id": "reward_grouped_items",
-            "label": "Cart items to Group"
+            "label": "Cart items to Group",
+            "default": 1
           }, {
             "type": "select",
             "id": "reward_icon",
@@ -297,7 +400,18 @@
     ],
     "presets": [
       {
-        "name": "Cart Items Rewards Bar"
+        "name": "Cart Items Rewards Bar",
+        "blocks": [
+          {
+            "type": "cart_item_reward"
+          },
+          {
+            "type": "cart_item_reward"
+          },
+          {
+            "type": "cart_item_reward"
+          }
+        ]
       }
     ]
   }
