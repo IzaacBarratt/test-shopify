@@ -12,77 +12,6 @@
     "section_instagram_carousel_QaVzeL": {
       "type": "section-instagram-carousel",
       "blocks": {
-        "product_3V69Ky": {
-          "type": "product",
-          "settings": {
-            "product": "3d-star-top-1",
-            "title": ""
-          }
-        },
-        "collection_qxYKDE": {
-          "type": "collection",
-          "settings": {
-            "collection": "annakiki",
-            "title": ""
-          }
-        },
-        "page_TLK6fa": {
-          "type": "page",
-          "settings": {
-            "cover_image": "shopify:\/\/shop_images\/products1_1.jpg",
-            "page_url": "contact",
-            "title": "Coffee"
-          }
-        },
-        "product_fW36A3": {
-          "type": "product",
-          "settings": {
-            "product": "3d-wave-deconstruction-jeans",
-            "title": ""
-          }
-        },
-        "product_Pqfnzj": {
-          "type": "product",
-          "settings": {
-            "product": "3d-wave-sleeve-slim-suit",
-            "title": ""
-          }
-        },
-        "product_mxg879": {
-          "type": "product",
-          "settings": {
-            "product": "3d-wave-sleeve-splitted-coat",
-            "title": ""
-          }
-        },
-        "product_heFpat": {
-          "type": "product",
-          "settings": {
-            "product": "d-wave-sleeve-short-cortex-coat",
-            "title": ""
-          }
-        },
-        "product_GFgYtz": {
-          "type": "product",
-          "settings": {
-            "product": "3d-wave-sleeve-slim-suit",
-            "title": ""
-          }
-        },
-        "product_PGkCMq": {
-          "type": "product",
-          "settings": {
-            "product": "3d-wavy-sleeve-motorcycle-leather-jacket",
-            "title": ""
-          }
-        },
-        "product_E6fi6J": {
-          "type": "product",
-          "settings": {
-            "product": "3d-star-top-1",
-            "title": ""
-          }
-        },
         "page_ENtqDU": {
           "type": "page",
           "settings": {
@@ -90,20 +19,82 @@
             "page_url": "contact",
             "title": "Contact"
           }
+        },
+        "page_EfaEXr": {
+          "type": "page",
+          "settings": {
+            "cover_image": "shopify:\/\/shop_images\/products4.jpg",
+            "page_url": "",
+            "title": "Coffee"
+          }
+        },
+        "page_F6iM64": {
+          "type": "page",
+          "settings": {
+            "cover_image": "shopify:\/\/shop_images\/marla-prusik-5q1KnUjtjaM-unsplash.jpg",
+            "page_url": "",
+            "title": "Builds"
+          }
+        },
+        "page_qeVPDk": {
+          "type": "page",
+          "settings": {
+            "cover_image": "shopify:\/\/shop_images\/samson-ZGjbiukp_-A-unsplash.jpg",
+            "page_url": "",
+            "title": "Builds 2"
+          }
+        },
+        "page_g9rDam": {
+          "type": "page",
+          "settings": {
+            "cover_image": "shopify:\/\/shop_images\/Screenshot_2024-02-18_at_10.04.16.png",
+            "page_url": "",
+            "title": "Saucy fits"
+          }
+        },
+        "page_HNK8fD": {
+          "type": "page",
+          "settings": {
+            "cover_image": "shopify:\/\/shop_images\/Screenshot_2024-02-16_at_13.49.52.png",
+            "page_url": "",
+            "title": "Jackets"
+          }
+        },
+        "page_H9qcUn": {
+          "type": "page",
+          "settings": {
+            "cover_image": "shopify:\/\/shop_images\/newprodimage13.jpg",
+            "page_url": "",
+            "title": "Shoulder pads"
+          }
+        },
+        "page_r4TCJ4": {
+          "type": "page",
+          "settings": {
+            "cover_image": "shopify:\/\/shop_images\/joel-filipe-RFDP7_80v5A-unsplash.jpg",
+            "page_url": "",
+            "title": "Builds 3"
+          }
+        },
+        "page_HJcgjr": {
+          "type": "page",
+          "settings": {
+            "cover_image": "shopify:\/\/shop_images\/newprodimage09.jpg",
+            "page_url": "",
+            "title": "Knees"
+          }
         }
       },
       "block_order": [
-        "product_3V69Ky",
-        "collection_qxYKDE",
-        "page_TLK6fa",
-        "product_fW36A3",
-        "product_Pqfnzj",
-        "product_mxg879",
-        "product_heFpat",
-        "product_GFgYtz",
-        "product_PGkCMq",
-        "product_E6fi6J",
-        "page_ENtqDU"
+        "page_ENtqDU",
+        "page_EfaEXr",
+        "page_F6iM64",
+        "page_qeVPDk",
+        "page_g9rDam",
+        "page_HNK8fD",
+        "page_H9qcUn",
+        "page_r4TCJ4",
+        "page_HJcgjr"
       ],
       "settings": {
         "carousel_gap": 1,
