@@ -31,7 +31,7 @@
         "desktop_copy": "<p>Get CVR ready for Black Friday<\/p>",
         "mobile_copy": "<p>Get CVR ready <\/p><p>for Black Friday<\/p>",
         "is_only_homepage": false,
-        "url_partial": "",
+        "url_partial": "*",
         "background_color": "linear-gradient(90deg, rgba(199, 70, 129, 1), rgba(88, 53, 139, 1) 100%)",
         "font_color": "#ffffff",
         "alignment": "center",
