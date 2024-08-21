@@ -96,6 +96,7 @@
         "page_r4TCJ4",
         "page_HJcgjr"
       ],
+      "disabled": true,
       "settings": {
         "carousel_gap": 1,
         "carousel_height": 10,
@@ -150,7 +151,7 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "Latest Sections",
         "heading_size": "h2",
         "description": "",
         "show_description": false,

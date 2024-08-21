@@ -17,8 +17,8 @@
         "countdown_timer_4JRbVG": {
           "type": "countdown_timer",
           "settings": {
-            "expiry_date": "2024-08-09",
-            "expiry_time": "20:45"
+            "expiry_date": "2024-11-29",
+            "expiry_time": "00:00"
           }
         }
       },
@@ -28,9 +28,9 @@
       "settings": {
         "is_debug": true,
         "banner_cta": "",
-        "desktop_copy": "<p>Free Shipping On Orders Over $50<\/p>",
-        "mobile_copy": "<p>Free Shipping Before<\/p>",
-        "is_only_homepage": true,
+        "desktop_copy": "<p>Get CVR ready for Black Friday<\/p>",
+        "mobile_copy": "<p>Get CVR ready <\/p><p>for Black Friday<\/p>",
+        "is_only_homepage": false,
         "url_partial": "",
         "background_color": "linear-gradient(90deg, rgba(199, 70, 129, 1), rgba(88, 53, 139, 1) 100%)",
         "font_color": "#ffffff",
