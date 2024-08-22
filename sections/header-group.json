@@ -25,11 +25,40 @@
       "block_order": [
         "countdown_timer_4JRbVG"
       ],
+      "disabled": true,
       "settings": {
         "is_debug": true,
         "banner_cta": "",
         "desktop_copy": "<p>Get CVR ready for Black Friday<\/p>",
         "mobile_copy": "<p>Get CVR ready <\/p><p>for Black Friday<\/p>",
+        "is_only_homepage": true,
+        "url_partial": "*",
+        "background_color": "linear-gradient(90deg, rgba(199, 70, 129, 1), rgba(88, 53, 139, 1) 100%)",
+        "font_color": "#ffffff",
+        "alignment": "center",
+        "text_alignment": "center"
+      }
+    },
+    "toggle_banner_qKwAXn": {
+      "type": "toggle-banner",
+      "blocks": {
+        "countdown_timer_WQCNyG": {
+          "type": "countdown_timer",
+          "disabled": true,
+          "settings": {
+            "expiry_date": "2024-11-29",
+            "expiry_time": "00:00"
+          }
+        }
+      },
+      "block_order": [
+        "countdown_timer_WQCNyG"
+      ],
+      "settings": {
+        "is_debug": true,
+        "banner_cta": "",
+        "desktop_copy": "<p>Click here for our FREE components<\/p>",
+        "mobile_copy": "<p>Click here for our <\/p><p>FREE components<\/p>",
         "is_only_homepage": true,
         "url_partial": "*",
         "background_color": "linear-gradient(90deg, rgba(199, 70, 129, 1), rgba(88, 53, 139, 1) 100%)",
@@ -106,13 +135,13 @@
     "header": {
       "type": "header",
       "settings": {
-        "logo_position": "top-center",
+        "logo_position": "middle-left",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
-        "show_line_separator": false,
-        "color_scheme": "scheme-1",
-        "menu_color_scheme": "scheme-1",
+        "show_line_separator": true,
+        "color_scheme": "scheme-3",
+        "menu_color_scheme": "scheme-3",
         "enable_country_selector": true,
         "enable_language_selector": true,
         "mobile_logo_position": "center",
@@ -124,6 +153,7 @@
   },
   "order": [
     "toggle_banner_FpeJbC",
+    "toggle_banner_qKwAXn",
     "gamified_announcement_bar_HKiW3d",
     "announcement-bar",
     "header"
