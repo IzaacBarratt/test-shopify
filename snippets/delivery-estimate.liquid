@@ -11,8 +11,6 @@
       align-items: center;
       justify-content: center;
       padding: 0 1rem;
-      /* border: 1px solid {{ settings.color_border | default: '#f2f2f2' }}; */
-      /* background-color: #fff; */
       border-radius: 10px;
   }
   .shipping-estimate__text {
@@ -76,7 +74,7 @@
 <div class="shipping-estimate">
   <div class="shipping-estimate__container">
       <div class="shipping-estimate__text">
-          <p>Estimated delivery to <span>{{ target_date_min }}</span> - <span>{{ target_date_max }}</span></p>
+          <p>Will be delivered by: <span>{{ target_date_min }}</span> - <span>{{ target_date_max }}</span></p>
       </div>
   </div>
 </div>
