@@ -1465,5 +1465,66 @@
         "default": "scheme-1"
       }
     ]
+  },
+  {
+    "name": "Shipping Settings",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "ship_on_saturday",
+        "label": "Ship on Saturday",
+        "default": false  
+      },
+      {
+        "type": "checkbox",
+        "id": "ship_on_sunday",
+        "label": "Ship on Sunday",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "UK Shipping Settings"
+      },
+      {
+        "type": "range",
+        "id": "uk_estimated_delivery_min",
+        "label": "UK Estimated Delivery Min",
+        "min": 1,
+        "max": 14,
+        "step": 1,
+        "default": 7
+      },
+      {
+        "type": "range",
+        "id": "uk_estimated_delivery_max",
+        "label": "UK Estimated Delivery Max",
+        "min": 1,
+        "max": 14,
+        "step": 1,
+        "default": 7
+      },
+      {
+        "type": "header",
+        "content": "US Shipping Settings"
+      },
+      {
+        "type": "range",
+        "id": "us_estimated_delivery_min",
+        "label": "US Estimated Delivery Min",
+        "min": 1,
+        "max": 14,
+        "step": 1,
+        "default": 7
+      },
+      {
+        "type": "range",
+        "id": "us_estimated_delivery_max",
+        "label": "US Estimated Delivery Max",
+        "min": 1,
+        "max": 14,
+        "step": 1,
+        "default": 7
+      },
+    ]
   }
 ]
